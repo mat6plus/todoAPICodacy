@@ -10,11 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
-from pathlib import Path
-# from dotenv import load_dotenv
+# import os
+# from pathlib import Path
+# # from dotenv import load_dotenv
 
-# load_dotenv()
+# # load_dotenv()
+
+import os
+import time
+from dotenv import load_dotenv
+from pathlib import Path
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+o#tu(vy%^#k9ccih3pn4jdl$td)wvv90(@*q7k6ziubt&y9qk'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     
     'todoapi',
     'rest_framework',
@@ -87,27 +95,27 @@ WSGI_APPLICATION = 'codacyTodo.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': str(os.getenv('DB_NAME')),
-#             'USER': str(os.getenv('DB_USER')),
-#             'PASSWORD': (os.getenv('DB_USER_PASSWORD')),
-#             'HOST': (os.getenv('DB_HOST')),
-#             'PORT': (os.getenv('DB_PORT')),
-#         }
-# } 
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'codacy',
-        'USER': 'matthew',
-        'PASSWORD': 'matman020',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': str(os.getenv('DB_NAME')),
+            'USER': str(os.getenv('DB_USER')),
+            'PASSWORD': (os.getenv('DB_USER_PASSWORD')),
+            'HOST': (os.getenv('DB_HOST')),
+            'PORT': (os.getenv('DB_PORT')),
+        }
+} 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'codacy',
+#         'USER': 'matthew',
+#         'PASSWORD': 'matman020',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
