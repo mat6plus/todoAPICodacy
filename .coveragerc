@@ -1,0 +1,8 @@
+[run]
+
+source=todoapi/
+omit=
+    venv
+    */migrations/*
+    */tests/*
+    */__init__.py
