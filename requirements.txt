@@ -4,7 +4,6 @@ django-extensions==3.1.3
 djangorestframework==3.12.4
 python-dotenv==0.19.0
 pytz==2021.1
-<<<<<<< HEAD
 sqlparse==0.4.1
 psycopg2-binary==2.8.6
 asgiref==3.4.1
@@ -12,14 +11,6 @@ atomicwrites==1.4.0
 attrs==21.2.0
 colorama==0.4.4
 coverage==5.5
-=======
-asgiref==3.4.1
-coverage==5.5
-psycopg2==2.9.1
-atomicwrites==1.4.0
-attrs==21.2.0
-colorama==0.4.4
->>>>>>> 209ee70b60a47e41e8009a56be33d15c9eae7024
 iniconfig==1.1.1
 packaging==21.0
 pluggy==0.13.1
@@ -28,11 +19,6 @@ pyparsing==2.4.7
 pytest==6.2.4
 pytest-cov==2.12.1
 python-dotenv==0.19.0
-<<<<<<< HEAD
 pytz==2021.1
 toml==0.10.2
 sqlparse==0.4.1
-=======
-sqlparse==0.4.1
-toml==0.10.2
->>>>>>> 209ee70b60a47e41e8009a56be33d15c9eae7024
