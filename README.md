@@ -1,7 +1,7 @@
 # todoAPICodacy
 A simple Django Rest Framework todo CRUD API. To run this simple todo API, clone the git repository into your folder of choice and in your terminal preferably a virtual environment but depending on user's preference. 
 
-To run the API ```with assumption docker and docker compose is installed on user's workstation``` first create a directory where you want the app to stay and then a virtual environment using the command "virtualenv {name of your environment} and this will create a name for your virtual environment and stated above. NB: You should have installed the "Virtualenv using pip install virtualenv or other package manager as neccessary. To activate the created virtual environment from the terminal run the following command;
+To run the API ```with assumption docker and docker compose is installed on user's workstation``` first create a directory where you want the app to stay and then a virtual environment using the command ```virtualenv {name of your environment}``` and this will create a name for your virtual environment and stated above. NB: You should have installed the "Virtualenv using pip install virtualenv or other package manager as neccessary. To activate the created virtual environment from the terminal run the following command;
 ```source {name of virtualenv}/bin/activate``` and if everything was installed correctly you should have a prompt displaying your virtual environment.
 
 Next, clone the repository into the folder and have that opened in your favorite editor, for me I use VS Code and running the command (code . ) inside the directory housing the cloned repo. 
