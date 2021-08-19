@@ -5,7 +5,7 @@ A simple Django Rest Framework todo CRUD API. To run this simple todo API, clone
 To run the API ```with assumption docker and docker compose is installed on user's workstation``` first create a directory where you want the app to stay and then a virtual environment using the command ```virtualenv {name of your environment}```. NB: You should have installed the ```Virtualenv using pip install virtualenv``` or other package manager as neccessary. To activate the created virtual environment from the terminal run the following command;
 ```source {name of virtualenv}/bin/activate``` and if everything was installed correctly you should have a prompt displaying your virtual environment.
 
-Next, clone the repository into the folder and have that opened in your favorite editor, for me I use VS Code and running the command (code . ) inside the directory housing the cloned repo. 
+Next, clone the repository into the folder and have that opened in your favorite editor, for me I use VS Code and running the command ```code .``` inside the directory housing the cloned repo. 
 
 From the terminal inside the app directory, run ```pip install -r requirements.txt``` file to download all the dependencies of the project. This project uses postgresql and as such a user with necessary permissions is to be created along with a database ```in my case the database is named codacy and user: matthew``` granting the user full right over the DB. In the file name .env which have excluded from my .gitignore file, adjust all applicable parameters where applicable so that the application is able to connect to the database successfully.
  
