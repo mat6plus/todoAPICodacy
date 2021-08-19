@@ -24,7 +24,7 @@ The Following are the endpoints and can be accessible from both the terminal usi
 127.0.0.1:8000/api/delete/1 ---- To delete the todo object in this case 1
 ```
 
-Bellow is the ```127.0.0.1:8000/api`` screenshot without any data.
+Bellow is the ```127.0.0.1:8000/api``` screenshot without any data.
 
 ![api](https://user-images.githubusercontent.com/19800135/130051743-d16c8722-e558-44aa-afa1-e4619c83978f.png)
 
