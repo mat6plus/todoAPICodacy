@@ -2,18 +2,25 @@ version: "3"
    
 services:
   db:
+    container_name: codacytodo_db
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB:${DB_NAME}
-      - POSTGRES_USER:${DB_USER}
-      - POSTGRES_PASSWORD:${DB_USER_PASSWORD}
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=matman020
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports: 
+      - "5432:5432"
+
   web:
+    restart: always
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000
+    container_name: codacytodo_web
     volumes:
-      - .:/todoapi
+      - .:/todoapicodacy
     ports:
       - "8000:8000"
     depends_on:

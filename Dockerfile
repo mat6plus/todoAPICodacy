@@ -1,7 +1,10 @@
 FROM python:3
 
 ENV PYTHONUNBUFFERED=1
-WORKDIR /todoapi
-COPY requirements.txt /todoapi
+
+WORKDIR /todoapicodacy
+
+COPY requirements.txt /todoapicodacy/
 RUN pip install -r requirements.txt
-COPY . /todoapi/
+COPY . /todoapicodacy/
+
