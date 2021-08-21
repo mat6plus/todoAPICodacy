@@ -21,14 +21,21 @@ The Following are the endpoints and can be accessible from both the terminal usi
 
 ```127.0.0.1:8000/api  ---- List all todo object
 127.0.0.1:8000/api/create --- To create a todo onject
-127.0.0.1:8000/api/detail/1 ---- To get todo by ID and in this case 1
-127.0.0.1:8000/api/update/1 ---- To update the todo object in this case 1
-127.0.0.1:8000/api/delete/1 ---- To delete the todo object in this case 1
+127.0.0.1:8000/api/detail/1 ---- To get todo by ID and in this case id:1
+127.0.0.1:8000/api/update/1 ---- To update the todo object in this case id:1
+127.0.0.1:8000/api/delete/1 ---- To delete the todo object in this case id:1
 ```
+
+#NB: Incase where the API is not rendering well in the browser it is used to test the API when, rather than using the ```python manage.py runserver``` command only, kindly add the --insecure to it like so ```python manage.py runserver --insecure``` same applicable while using the docker.
 
 Bellow is the ```127.0.0.1:8000/api``` screenshot without any data.
 
 ![api](https://user-images.githubusercontent.com/19800135/130051743-d16c8722-e558-44aa-afa1-e4619c83978f.png)
+![todo Create](https://user-images.githubusercontent.com/19800135/130327811-817f6641-b7c9-47ed-a885-d4b1260bc778.png)
+![todo Update](https://user-images.githubusercontent.com/19800135/130327823-229b4804-d78d-44d2-b57a-f471af3dd886.png)
+![todo Delete](https://user-images.githubusercontent.com/19800135/130327828-374b450e-acb8-402b-b081-da843e749a00.png)
+
+
 
 
 Thank you
