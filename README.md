@@ -22,8 +22,8 @@ The Following are the endpoints and can be accessible from both the terminal usi
 ```127.0.0.1:8000/api or 0.0.0.0:8000/api with docker-compose ---- List all todo object
 127.0.0.1:8000/api/create or 0.0.0.0:8000/api/create with docker compose --- To create a todo onject
 127.0.0.1:8000/api/detail/1 or 0.0.0.0:8000/api/detail/1 with docker compose ---- To get todo by ID and in this case id:1
-127.0.0.1:8000/api/update/1 or 0.0.0.0:8000/api/update/1 ---- To update the todo object in this case id:1
-127.0.0.1:8000/api/delete/1 or 0.0.0.0:8000/api/delete/1 ---- To delete the todo object in this case id:1
+127.0.0.1:8000/api/update/1 or 0.0.0.0:8000/api/update/1 with docker compose ---- To update the todo object in this case id:1
+127.0.0.1:8000/api/delete/1 or 0.0.0.0:8000/api/delete/1 with docker compose---- To delete the todo object in this case id:1
 ```
 
 #NB: Incase where the API is not rendering well in the browser it is used to test the API when, rather than using the ```python manage.py runserver``` command only, kindly add the --insecure to it like so ```python manage.py runserver --insecure``` same applicable while using the docker compose.
