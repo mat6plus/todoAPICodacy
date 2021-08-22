@@ -9,26 +9,26 @@ Next, clone the repository into the folder created above and have that opened in
 
 From the terminal inside the app directory, run ```pip install -r requirements.txt``` file to download all the dependencies of the project. This project uses postgresql database and as such, it is expected that a user with necessary permissions is to be created along with a database to be used by the application ```in my case the database is named codacy and user: matthew``` granting the user full right over the DB. In the file name ```.env``` which I have excluded from my ```.gitignore file```, adjust all parameters where applicable so that the application is able to connect to the database successfully.
  
-When all that is done, to get the app running from the terminal first run the ``docker-compose up --build -d to build the image and get the app running based ``` on the definition specified in the ```docker-compose.yml file. ```. Run the following command ```python manage.py migrate and then python manage.py makemigrations``` or ```docker-compose exec web python manage.py migrate and then docker-compose exec web python manage.py migrate``` to push all migrations such as data models of the app into the databse for the first time and when the data model is adjusted for any reason. ```NB: if the created database and user is properly configured there shouldn't be any error during the migration and also it should also be noted that the migrations commands can be defined within the docker compose file```.
+When all that is done, to get the app running from the terminal first run the ``docker-compose up --build -d to build the image and get the app running based ``` on the definition specified in the ```docker-compose.yml file. ```. Run the following command ```python manage.py migrate and then python manage.py makemigrations``` or ```docker-compose run web python manage.py migrate and then docker-compose run web python manage.py migrate``` to push all migrations such as data models of the app into the databse for the first time and when the data model is adjusted for any reason. ```NB: if the created database and user is properly configured there shouldn't be any error during the migration and also it should also be noted that the migrations commands can be defined within the docker compose file```.
 
-To test the API, you can either run the following command in the terminal ```python manage.py runserver``` or allow it automatically start when the ```docker-compose up``` command is executed after migrations has is successful and the server should be up and running on the default port ```127.0.0.1:8000``` and you can decide to change the port you want to run the app example ```python manage.py runserver 8009``` and it will run on that port and all corresponding enpoints should work as expected. 
+To test the API, you can either run the following command in the terminal ```python manage.py runserver``` or allow it automatically start when the ```docker-compose up``` command is executed after migrations has is successful and the server should be up and running on the default port ```127.0.0.1:8000``` by default with docker the application will run on ```0.0.0.0:8000``` and you can decide to change the port you want to run the app example ```python manage.py runserver 8009 or docker-compose run web python manage.py runserver 8009``` and it will run on that port and all corresponding enpoints should work as expected. 
 
-The API should be accessible from the url ```127.0.0.1:8000/api or 127.0.0.1:{defined_port_number}/api```. NB: By default there wouldn't be any user within the system and as such to create a user, run this command ```python manage.py createsuperuser or docker-compose exec python manage.py createsuperuser``` from the terminal and you should be prompted to enter desired username, email and password.
+The API should be accessible from the url ```127.0.0.1:8000/api or 127.0.0.1:{defined_port_number}/api or 0.0.0.0:8000/api with docker-compose```. NB: By default there wouldn't be any user within the system and as such to create a user, run this command ```python manage.py createsuperuser or docker-compose run python manage.py createsuperuser``` from the terminal and you should be prompted to enter desired username, email and password.
 
 Other users can be created from the Django Admin panel which is accessible from ```127.0.0.1:8000/admin``` and you should be presented with a login which the above created super user credentials can be used to login and from the users tile on the admin interface other user's can be created or from the django shell.
 
 The Following are the endpoints and can be accessible from both the terminal using CURL or from the browser by pointing to the following endpoints;
 
-```127.0.0.1:8000/api  ---- List all todo object
-127.0.0.1:8000/api/create --- To create a todo onject
-127.0.0.1:8000/api/detail/1 ---- To get todo by ID and in this case id:1
-127.0.0.1:8000/api/update/1 ---- To update the todo object in this case id:1
-127.0.0.1:8000/api/delete/1 ---- To delete the todo object in this case id:1
+```127.0.0.1:8000/api or 0.0.0.0:8000/api with docker-compose ---- List all todo object
+127.0.0.1:8000/api/create or 0.0.0.0:8000/api/create with docker compose --- To create a todo onject
+127.0.0.1:8000/api/detail/1 or 0.0.0.0:8000/api/detail/1 with docker compose ---- To get todo by ID and in this case id:1
+127.0.0.1:8000/api/update/1 or 0.0.0.0:8000/api/update/1 ---- To update the todo object in this case id:1
+127.0.0.1:8000/api/delete/1 or 0.0.0.0:8000/api/delete/1 ---- To delete the todo object in this case id:1
 ```
 
-#NB: Incase where the API is not rendering well in the browser it is used to test the API when, rather than using the ```python manage.py runserver``` command only, kindly add the --insecure to it like so ```python manage.py runserver --insecure``` same applicable while using the docker.
+#NB: Incase where the API is not rendering well in the browser it is used to test the API when, rather than using the ```python manage.py runserver``` command only, kindly add the --insecure to it like so ```python manage.py runserver --insecure``` same applicable while using the docker compose.
 
-Bellow is the ```127.0.0.1:8000/api``` screenshot without any data.
+Bellow is the ```127.0.0.1:8000/api``` screenshot same as when it's running on 0.0.0.0:8000/api
 
 ![api](https://user-images.githubusercontent.com/19800135/130051743-d16c8722-e558-44aa-afa1-e4619c83978f.png)
 ![todo Create](https://user-images.githubusercontent.com/19800135/130327811-817f6641-b7c9-47ed-a885-d4b1260bc778.png)
