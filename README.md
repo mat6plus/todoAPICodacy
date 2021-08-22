@@ -28,7 +28,7 @@ The Following are the endpoints and can be accessible from both the terminal usi
 
 #NB: Incase where the API is not rendering well in the browser it is used to test the API when, rather than using the ```python manage.py runserver``` command only, kindly add the --insecure to it like so ```python manage.py runserver --insecure``` same applicable while using the docker compose.
 
-Bellow is the ```127.0.0.1:8000/api``` screenshot same as when it's running on 0.0.0.0:8000/api
+Bellow is the ```127.0.0.1:8000/api``` screenshot same as when it's running on ```0.0.0.0:8000/api```
 
 ![api](https://user-images.githubusercontent.com/19800135/130051743-d16c8722-e558-44aa-afa1-e4619c83978f.png)
 ![todo Create](https://user-images.githubusercontent.com/19800135/130327811-817f6641-b7c9-47ed-a885-d4b1260bc778.png)
