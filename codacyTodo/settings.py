@@ -31,17 +31,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+# DEBUG = int(os.environ.get("DEBUG", default=0))
 
-#DEBUG = True
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+# ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
-# ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
 
 
 # Application definition
@@ -68,6 +69,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
 
 ROOT_URLCONF = 'codacyTodo.urls'
 
@@ -100,27 +110,29 @@ WSGI_APPLICATION = 'codacyTodo.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': str(os.getenv('DB_NAME')),
-            'USER': str(os.getenv('DB_USER')),
-            'PASSWORD': (os.getenv('DB_USER_PASSWORD')),
-            'HOST': (os.getenv('DB_HOST')),
-            'PORT': (os.getenv('DB_PORT')),
-        }
-} 
+
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'codacy',
-#         'USER': 'matthew',
-#         'PASSWORD': 'matman020',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ.get('DB_NAME'),
+#             'USER': os.environ.get('DB_USER'),
+#             'PASSWORD': os.environ.get('DB_PASSWORD'),
+#             'HOST': os.environ.get('DB_HOST'),
+#             'PORT': os.environ.get('DB_PORT'),
+#         }
+# } 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'matman020',
+        'HOST': 'db',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -159,9 +171,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'codacyTodo/static'),
+# )
+
+
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    ("js", os.path.join(STATIC_ROOT,'js')),
+    ("css", os.path.join(STATIC_ROOT,'css')),
+    ("images", os.path.join(STATIC_ROOT,'images')),
+    ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+)
