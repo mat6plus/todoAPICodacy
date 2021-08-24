@@ -35,6 +35,11 @@ Bellow is the ```127.0.0.1:8000/api``` screenshot same as when it's running on `
 ![todo Update](https://user-images.githubusercontent.com/19800135/130327823-229b4804-d78d-44d2-b57a-f471af3dd886.png)
 ![todo Delete](https://user-images.githubusercontent.com/19800135/130327828-374b450e-acb8-402b-b081-da843e749a00.png)
 
+Codacy test coverage screenshot
+
+<img width="957" alt="codacy" src="https://user-images.githubusercontent.com/19800135/130563592-b080a20c-80b8-4cd0-9050-5467fc07156b.png">
+
+
 
 
 
