@@ -37,14 +37,14 @@ The Following are the endpoints and can be accessible from both the terminal usi
 
 NB: Incase where the API is not rendering well in the browser like the css and js files not loading, rather than using the ```python manage.py runserver``` command only as defined in the docker-compose file, kindly add the ```--insecure``` flag to it like so ```python manage.py runserver --insecure``` and everything should be fine.
 
-##Bellow is the ```127.0.0.1:8000/api``` screenshot same as when it's running on ```0.0.0.0:8000/api```
+> Bellow are the API screenshots
 
 ![api](https://user-images.githubusercontent.com/19800135/130051743-d16c8722-e558-44aa-afa1-e4619c83978f.png)
 ![todo Create](https://user-images.githubusercontent.com/19800135/130327811-817f6641-b7c9-47ed-a885-d4b1260bc778.png)
 ![todo Update](https://user-images.githubusercontent.com/19800135/130327823-229b4804-d78d-44d2-b57a-f471af3dd886.png)
 ![todo Delete](https://user-images.githubusercontent.com/19800135/130327828-374b450e-acb8-402b-b081-da843e749a00.png)
 
-##Codacy test coverage screenshot
+#### Codacy test coverage screenshot
 
 <img width="957" alt="codacy" src="https://user-images.githubusercontent.com/19800135/130563592-b080a20c-80b8-4cd0-9050-5467fc07156b.png">
 
