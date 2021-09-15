@@ -1,4 +1,15 @@
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
+![Django](https://img.shields.io/badge/django-3.2-success)
+![Django RestFrameWork](https://img.shields.io/badge/djangorestframework-3.12.4-blueviolet)
+![Docker](https://img.shields.io/badge/docker-3.12.4-blueviolet)
+![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
+
 # todoAPICodacy Getting Started
 A simple Django Rest Framework todo CRUD API. To run this simple todo API, clone the git repository into your folder of choice and in your terminal preferably a virtual environment but depending on user's preference. 
 
@@ -48,11 +59,8 @@ NB: Incase where the API is not rendering well in the browser like the css and j
 
 <img width="957" alt="codacy" src="https://user-images.githubusercontent.com/19800135/130563592-b080a20c-80b8-4cd0-9050-5467fc07156b.png">
 
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-
-
-
-Thank you
 
 Matthew Johnson
 
