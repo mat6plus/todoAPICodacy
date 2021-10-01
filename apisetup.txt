@@ -1,0 +1,46 @@
+http --session=admin -a admin:matman020 http://127.0.0.1:8000/api X-Foo:Bar
+
+http GET http://127.0.0.1:8000/api
+
+
+
+First get the container ID by running the:
+
+sudo docker ps -all                             to display the container ID
+
+then run with the container ID inserted appropriately. NB the container must be running with the docker-compose up command for you to access the container within the virtual environment housing the project.
+
+sudo docker exec -it aede7d433159 python manage.py createsuperuser
+
+##########################################################################
+TESTING WITH AUTHENTICATED USER in HHTPIE
+##########################################################################
+
+http -a admin:matman020 GET http://127.0.0.1:8000/api/  --- List all Objects
+http -a admin:matman020 GET http://127.0.0.1:8000/api/detail/1  --- List a single object by ID
+http -a admin:matman020 POST http://127.0.0.1:8000/api/create title="Greatest God" completed=true user=1 --json  | Create Object
+http -a admin:matman020 PUT http://127.0.0.1:8000/api/update/1 title="Greatest God of all" completed=true user=1 --json  | Update Object
+http -a admin:matman020 DELETE http://127.0.0.1:8000/api/delete/3               | Delete Object by ID
+
+######################################################################################################################################
+
+
+#################################################################################
+TESTING MY API WITH CURL STEP BY STEP
+#################################################################################
+SET THE COOKIE SESSION TO STORE YOUR USERNAME/PASSWORD FOR THE DURATION OF TESTING
+
+1. curl -b cookiejar.txt -c cookiejar.txt http://127.0.0.1:8000/admin -d user=admin -d password=matman020
+2. curl -X GET http://127.0.0.1:8000/api/ -H 'Accept: application/json; indent=4'   --- List all entry
+3. curl -X GET http://127.0.0.1:8000/api/detail/1 -H 'Accept: application/json; indent=4'   --- List entry by id
+4. curl -i -X POST http://127.0.0.1:8000/api/create -H "Content-Type: application/json" -d '{"title":"Life without Christ", "completed":"true", "user":"1"}'
+
+###############################################################################################
+ACCESSING API FROM DATA FROM THE DATABASE WITH DOCKER 
+###############################################################################################
+
+Bring up the docker Image and run the "docker ps" command to display the container ID.
+
+RUN "docker exec -it b23d3291c175 bash" Where b23d3291c175 is the container ID and from the bash prompt enter "psql -U postgres" with the password
+which should login user into the database
+

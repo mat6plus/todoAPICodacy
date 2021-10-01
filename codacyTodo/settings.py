@@ -38,7 +38,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # DEBUG = int(os.environ.get("DEBUG", default=0))
 
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
@@ -188,9 +188,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    ("js", os.path.join(STATIC_ROOT,'js')),
-    ("css", os.path.join(STATIC_ROOT,'css')),
-    ("images", os.path.join(STATIC_ROOT,'images')),
-    ("fonts", os.path.join(STATIC_ROOT,'fonts')),
-)
+# STATICFILES_DIRS = (
+#     ("js", os.path.join(STATIC_ROOT,'js')),
+#     ("css", os.path.join(STATIC_ROOT,'css')),
+#     ("images", os.path.join(STATIC_ROOT,'images')),
+#     ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+# )
